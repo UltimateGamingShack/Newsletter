@@ -2,6 +2,7 @@ const express = require("express");
 const request = require("request");
 const https = require("https");
 const app = express();
+const porrt = process.env.PORT || 3000;
 app.use(express.static("public"));
 app.use(express.urlencoded({extended: true}));
 
@@ -52,7 +53,7 @@ app.post("/failure", function(req, res){
   res.redirect("/");
 });
 
-app.listen(3000, function(){
+app.listen(porrt, function(){
   console.log("Server is running on port 3000");
 });
 //04ebdc279f340a0158a6938cd174ca6a-us17
